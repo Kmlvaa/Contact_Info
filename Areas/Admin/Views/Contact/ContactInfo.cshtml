@@ -1,0 +1,38 @@
+﻿@model ContactInfoVM
+
+@if (User.IsInRole("Admin"))
+{
+    <div class="d-flex justify-content-center">
+    <form>
+        <div class="mb-3">
+            <label class="form-label">Email address</label>
+            <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Phone Number</label>
+            <input asp-for="PhoneNumber" type="text" class="form-control" id="exampleInputText1">
+        </div>
+        <button type="submit" class="btn btn-primary">Update</button>
+    </form>
+    </div>
+}
+else
+{
+    <div class="d-flex justify-content-center">
+    <form>
+            <fieldset disabled>
+            <div class="mb-3">
+                <label class="form-label">Email address</label>
+                <input asp-for="Email" type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+            </div>
+            <div class="mb-3">
+                <label class="form-label">Phone Number</label>
+                <input asp-for="PhoneNumber" type="text" class="form-control" id="exampleInputText1">
+            </div>
+            <button type="submit" class="btn btn-primary">Update</button>
+            </fieldset>
+        </form>
+    </div>
+}
